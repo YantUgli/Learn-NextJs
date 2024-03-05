@@ -1,3 +1,31 @@
 Layout and Tamplate
 - layout membawa state
 - template tidak membawa state
+
+Group and Dynamic Routes
+- jika ingin membuat grup yang tidak mempengaruhi url maka tambahkan (), contohnya 
+
+jika ingin membuat url login dan register kedalam group auth
+expektasi url: 
+    - http://anjai.com/login
+    - http://anjai.com/register
+
+hasil: 
+    - http://anjai.com/auth/login
+    - http://anjai.com/auth/register
+
+jika ingin auth nya tidak dibaca sebagai url maka ubah nama folder auth yang membungkus login dan register menjadi (auth)
+
+- dapat menggunakan dynamic routes dengan membuat folder yang di bungkus [], contoh nya
+
+expektasi url: http://anjai.com/product/1
+maka buat lah folder product>[params]
+untuk mendapatkan /1 sebagai parameter 
+
+expektasi url: http://anjai.com/product/male/clothes/1
+maka buatlah folder product>[...params]
+untuk mendapatkan male/clothes/1 sebagai parameter
+
+jika ingin membuat dynamic routes optional maka buat [[params]]
+
+
