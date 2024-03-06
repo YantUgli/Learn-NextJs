@@ -28,4 +28,11 @@ untuk mendapatkan male/clothes/1 sebagai parameter
 
 jika ingin membuat dynamic routes optional maka buat [[params]]
 
+Navigation and Link
+
+- dapat menggunakan <Link>
+- ada fungsi client side useRouter untuk mendapatkan sedang berada di route mana 
+contoh : 
+url : http://anjai.com/product/1
+maka akan terbaca kalau berada di route /product/1
 
