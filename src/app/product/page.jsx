@@ -2,7 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData() {
-    const res = await fetch('https://fakestoreapi.com/products')
+    const res = await fetch('https://fakestoreapi.com/products?limit=20', {
+        cache: 'force-cache',
+        // next: {
+        //     revalidate: 10
+        // }
+    })
 
     if (!res.ok) {
         throw new Error('Failed to fetch data')
@@ -12,7 +17,6 @@ async function getData() {
 
 export default async function ProductPage() {
     const products = await getData()
-    console.log(products.length, products[0].id);
     return (
         <div>
             <h1>
