@@ -6,13 +6,14 @@ import Image from "next/image"
 export default async function DetailProduct(props) {
     const { params } = props
     const data = await getData(params)
-    // console.log(data, params);
+    console.log(data, params);
+    const detail = data.detailProduct
     return (
         <div className="container mx-auto my-10">
             <div className="w-1/2 mx-auto border border-gray-700 rounded-md overflow-hidden">
                 <div className="relative h-96">
                     <Image
-                        src={data.image}
+                        src={detail.image}
                         alt="foto"
                         fill
                         className="w-full aspect-square object-cover"
@@ -21,10 +22,10 @@ export default async function DetailProduct(props) {
                 </div>
                 <div className="bg-white py-4 px-6">
                     <h2>
-                        {data.title}
+                        {detail.name}
                     </h2>
                     <p>
-                        Price : ${data.price}
+                        Price : ${detail.price}
                     </p>
                 </div>
             </div>
